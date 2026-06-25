@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="MonoVision - Convert color images to stunning black & white instantly. Free, fast, and works completely offline.">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>MonoVision | Image to Black & White Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header" role="banner">
+        <div class="header-content">
+            <div class="logo-section">
+                <svg class="logo-icon" viewBox="0 0 40 40" width="40" height="40" aria-hidden="true">
+                    <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2" />
+                    <circle cx="12" cy="15" r="3" fill="currentColor" />
+                    <path d="M 20 35 Q 15 25 10 20 Q 15 15 20 10 Q 25 15 30 20 Q 25 25 20 35" fill="currentColor"
+                        opacity="0.3" />
+                </svg>
+                <h1 class="site-title">MonoVision</h1>
+            </div>
+            <p class="site-subtitle">Convert Color Images to Stunning Black & White Instantly</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" role="main">
+        <div class="container">
+            <!-- Upload Section -->
+            <section class="upload-section" aria-labelledby="upload-title">
+                <h2 id="upload-title" class="section-title">Upload Your Image</h2>
+
+                <!-- Drag and Drop Area -->
+                <div class="upload-area" id="uploadArea" role="region" aria-label="Drag and drop zone for image upload">
+                    <svg class="upload-icon" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+                        <path d="M32 8 L48 24 L40 24 L40 48 L24 48 L24 24 L16 24 Z" fill="none" stroke="currentColor"
+                            stroke-width="2" />
+                        <rect x="8" y="56" width="48" height="2" fill="currentColor" />
+                    </svg>
+                    <div class="upload-text">
+                        <p class="upload-main-text">Drag and drop your image here</p>
+                        <p class="upload-sub-text">or click to browse</p>
+                    </div>
+                    <input type="file" id="fileInput" class="file-input"
+                        accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"
+                        aria-label="Select image file to convert">
+                </div>
+
+                <!-- File Information -->
+                <div class="file-info" id="fileInfo" role="status" aria-live="polite" style="display: none;">
+                    <div class="info-item">
+                        <span class="info-label">File Name:</span>
+                        <span class="info-value" id="fileName">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">File Size:</span>
+                        <span class="info-value" id="fileSize">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Dimensions:</span>
+                        <span class="info-value" id="fileDimensions">-</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preview Section -->
+            <section class="preview-section" id="previewSection" style="display: none;" aria-labelledby="preview-title">
+                <h2 id="preview-title" class="section-title">Preview</h2>
+
+                <div class="preview-container">
+                    <!-- Original Image Card -->
+                    <div class="image-card">
+                        <h3 class="card-title">Original Image</h3>
+                        <div class="image-wrapper">
+                            <canvas id="originalCanvas" class="preview-canvas" role="img"
+                                aria-label="Original color image preview"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Converted Image Card -->
+                    <div class="image-card">
+                        <h3 class="card-title">Black & White</h3>
+                        <div class="image-wrapper">
+                            <canvas id="convertedCanvas" class="preview-canvas" role="img"
+                                aria-label="Converted black and white image preview"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading Animation -->
+                <div class="loading-spinner" id="loadingSpinner" style="display: none;" role="status"
+                    aria-label="Processing image">
+                    <div class="spinner-ring"></div>
+                    <p class="loading-text">Converting to black & white...</p>
+                </div>
+            </section>
+
+            <!-- Action Buttons Section -->
+            <section class="action-section" id="actionSection" style="display: none;" aria-labelledby="action-title">
+                <h2 id="action-title" class="sr-only">Image Conversion Actions</h2>
+
+                <div class="button-group">
+                    <button id="convertBtn" class="btn btn-primary" aria-label="Convert image to black and white">
+                        <span class="btn-text">Convert to Black & White</span>
+                    </button>
+
+                    <button id="downloadBtn" class="btn btn-success" style="display: none;"
+                        aria-label="Download converted black and white image">
+                        <span class="btn-text">Download Image</span>
+                    </button>
+
+                    <button id="resetBtn" class="btn btn-secondary" aria-label="Reset and upload another image">
+                        <span class="btn-text">Upload Another</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Notification Area -->
+            <div class="notification-container" id="notificationContainer" role="region" aria-live="polite"
+                aria-atomic="true"></div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <p>&copy; <span id="currentYear">2024</span> MonoVision. All rights reserved.</p>
+            <p class="footer-subtitle">Built with HTML5, CSS3 & Vanilla JavaScript</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
