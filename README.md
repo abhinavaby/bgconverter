@@ -1,4 +1,4 @@
-# MonoVision - Image to Black & White Converter
+# MonoVision - Image to Black & White Converters
 
 ![MonoVision](https://img.shields.io/badge/Status-Production%20Ready-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-blue)
